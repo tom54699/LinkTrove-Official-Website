@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>LinkTrove - 一個分頁，管理所有書籤</title>
+  <meta name="title" content="LinkTrove - 一個分頁，管理所有書籤">
+  <meta name="description" content="為重度分頁使用者設計的 Chrome 擴充功能。三欄布局、拖放排序、即時同步、批次操作，讓你的研究資料井然有序。">
+  <meta name="keywords" content="Chrome 擴充功能, 書籤管理, 分頁管理, LinkTrove, Toby 替代方案">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linktrove.github.io/">
+  <meta property="og:title" content="LinkTrove - 一個分頁，管理所有書籤">
+  <meta property="og:description" content="為重度分頁使用者設計的 Chrome 擴充功能。拖放排序、即時同步、批次操作。">
+  <meta property="og:image" content="https://linktrove.github.io/images/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://linktrove.github.io/">
+  <meta property="twitter:title" content="LinkTrove - 一個分頁，管理所有書籤">
+  <meta property="twitter:description" content="為重度分頁使用者設計的 Chrome 擴充功能。拖放排序、即時同步、批次操作。">
+  <meta property="twitter:image" content="https://linktrove.github.io/images/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-4 left-4 right-4 bg-white/90 backdrop-blur-md rounded-xl shadow-md px-6 py-4 z-50 transition-all duration-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 font-heading font-bold text-xl text-gray-900">
+        <span class="text-primary">LinkTrove</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-gray-600 hover:text-primary transition-colors duration-200">功能特色</a>
+        <a href="#demo" class="text-gray-600 hover:text-primary transition-colors duration-200">互動展示</a>
+        <a href="#installation" class="text-gray-600 hover:text-primary transition-colors duration-200">安裝指南</a>
+        <a href="https://github.com/linktrove/linktrove" target="_blank" class="text-gray-600 hover:text-primary transition-colors duration-200">GitHub</a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a href="#installation" class="bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer">
+          立即安裝
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="mobile-menu-toggle" class="md:hidden text-gray-600 hover:text-primary cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-200">
+      <div class="flex flex-col gap-3">
+        <a href="#features" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2">功能特色</a>
+        <a href="#demo" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2">互動展示</a>
+        <a href="#installation" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2">安裝指南</a>
+        <a href="https://github.com/linktrove/linktrove" target="_blank" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2">GitHub</a>
+        <a href="#installation" class="bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer text-center mt-2">
+          立即安裝
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-32 pb-20 px-4 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left: Text Content -->
+        <div class="space-y-6">
+          <h1 class="text-5xl md:text-6xl font-heading font-bold text-gray-900 leading-tight">
+            一個分頁，<br>
+            <span class="text-primary">管理所有書籤</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600">
+            為重度分頁使用者設計的 Chrome 擴充功能。三欄布局、拖放排序、即時同步、批次操作，讓你的研究資料井然有序。
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#installation" class="bg-primary-dark text-white px-8 py-4 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer text-center">
+              免費安裝
+            </a>
+            <a href="https://github.com/linktrove/linktrove" target="_blank" class="bg-white text-primary border-2 border-primary px-8 py-4 rounded-lg font-medium hover:bg-pink-50 transition-colors duration-200 cursor-pointer text-center">
+              查看 GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Hero Image -->
+        <div class="relative">
+          <div class="bg-white rounded-2xl shadow-2xl p-4 border border-gray-200">
+            <!-- Placeholder for screenshot -->
+            <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
+              <p class="text-gray-400 text-center px-4">
+                [產品截圖]<br>
+                <span class="text-sm">三欄介面展示</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Showcase -->
+  <section id="features" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
+          功能特色
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          專為重度分頁使用者設計的強大功能
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1: 三欄式介面 -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:border-primary/30 transition-all duration-200 cursor-pointer">
+          <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+          </svg>
+          <h3 class="text-2xl font-semibold font-heading mb-2 text-gray-900">三欄式介面</h3>
+          <p class="text-gray-600">Collections、Cards、Open Tabs 三欄設計，一目了然</p>
+        </div>
+
+        <!-- Feature 2: 拖放排序 -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:border-primary/30 transition-all duration-200 cursor-pointer">
+          <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+          </svg>
+          <h3 class="text-2xl font-semibold font-heading mb-2 text-gray-900">拖放排序</h3>
+          <p class="text-gray-600">直覺拖放卡片，自由重新排序，順序永久保存</p>
+        </div>
+
+        <!-- Feature 3: 即時分頁同步 -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:border-primary/30 transition-all duration-200 cursor-pointer">
+          <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          <h3 class="text-2xl font-semibold font-heading mb-2 text-gray-900">即時分頁同步</h3>
+          <p class="text-gray-600">多視窗分頁即時同步，支援跨視窗拖動</p>
+        </div>
+
+        <!-- Feature 4: 批次操作 -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:border-primary/30 transition-all duration-200 cursor-pointer">
+          <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+          </svg>
+          <h3 class="text-2xl font-semibold font-heading mb-2 text-gray-900">批次操作</h3>
+          <p class="text-gray-600">多選卡片、批次刪除/移動/開啟，提升管理效率</p>
+        </div>
+
+        <!-- Feature 5: GitHub Gist 分享 -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:border-primary/30 transition-all duration-200 cursor-pointer">
+          <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+          </svg>
+          <h3 class="text-2xl font-semibold font-heading mb-2 text-gray-900">GitHub Gist 分享</h3>
+          <p class="text-gray-600">一鍵產生分享連結，透過 GitHub Gist 公開或私密分享</p>
+        </div>
+
+        <!-- Feature 6: 匯入/匯出 -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:border-primary/30 transition-all duration-200 cursor-pointer">
+          <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+          </svg>
+          <h3 class="text-2xl font-semibold font-heading mb-2 text-gray-900">匯入/匯出</h3>
+          <p class="text-gray-600">支援 Toby v3/v4 JSON、HTML 書籤匯入，完整備份還原</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo -->
+  <section id="demo" class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
+          試試拖曳卡片重新排序
+        </h2>
+        <p class="text-lg text-gray-600">
+          體驗 LinkTrove 的流暢操作，就像整理真實的書籤一樣簡單
+        </p>
+      </div>
+
+      <!-- Demo Cards Container -->
+      <div id="demo-cards" class="space-y-3 max-w-md mx-auto">
+        <!-- Cards will be generated by JavaScript -->
+      </div>
+
+      <!-- Hint Text -->
+      <p class="text-center text-sm text-gray-500 mt-6">
+        💡 提示：拖曳任意卡片改變順序（支援滑鼠與觸控）
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
+          為什麼選擇 LinkTrove
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          從使用者視角出發，解決真實痛點
+        </p>
+      </div>
+
+      <!-- Benefits List -->
+      <div class="space-y-20">
+        <!-- Benefit 1 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-4">
+            <div class="text-6xl font-heading font-bold text-primary/20">01</div>
+            <h3 class="text-3xl font-heading font-bold text-gray-900">告別分頁地獄</h3>
+            <p class="text-lg text-gray-600">
+              Chrome 分頁過多導致記憶體爆炸、找不到需要的網頁？將分頁儲存為卡片，需要時快速搜尋（Ctrl+K）開啟，讓瀏覽器保持輕盈。
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 aspect-video flex items-center justify-center">
+            <p class="text-gray-400">[配圖：分頁管理示意圖]</p>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 aspect-video flex items-center justify-center md:order-1">
+            <p class="text-gray-400">[配圖：階層式組織示意圖]</p>
+          </div>
+          <div class="space-y-4 md:order-2">
+            <div class="text-6xl font-heading font-bold text-primary/20">02</div>
+            <h3 class="text-3xl font-heading font-bold text-gray-900">研究資料系統化</h3>
+            <p class="text-lg text-gray-600">
+              研究資料散落各處，難以整理分類？使用階層式組織（Organizations → Categories → Groups → Cards），讓知識管理井然有序。
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-4">
+            <div class="text-6xl font-heading font-bold text-primary/20">03</div>
+            <h3 class="text-3xl font-heading font-bold text-gray-900">多裝置無痛同步</h3>
+            <p class="text-lg text-gray-600">
+              換電腦或瀏覽器時書籤遺失？匯出 JSON 備份，隨時還原。未來將支援雲端同步，跨裝置存取更便利。
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 aspect-video flex items-center justify-center">
+            <p class="text-gray-400">[配圖：多裝置同步示意圖]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Guide -->
+  <section id="installation" class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
+          開始使用 LinkTrove
+        </h2>
+        <p class="text-lg text-gray-600">
+          選擇適合你的安裝方式
+        </p>
+      </div>
+
+      <!-- Installation Options -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Option A: Chrome Web Store -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">推薦</span>
+            <h3 class="text-2xl font-heading font-bold text-gray-900">Chrome Web Store</h3>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
+              <div>
+                <p class="text-gray-900 font-medium">前往 Chrome Web Store</p>
+                <p class="text-sm text-gray-500">搜尋「LinkTrove」</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
+              <div>
+                <p class="text-gray-900 font-medium">點擊「加到 Chrome」</p>
+                <p class="text-sm text-gray-500">確認安裝權限</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
+              <div>
+                <p class="text-gray-900 font-medium">開啟新分頁即可使用</p>
+                <p class="text-sm text-gray-500">享受全新的書籤管理體驗</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="block bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer text-center">
+            前往 Chrome Web Store
+          </a>
+        </div>
+
+        <!-- Option B: From Source -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-4">從原始碼安裝</h3>
+
+          <div class="space-y-4 mb-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">1</div>
+              <div>
+                <p class="text-gray-900 font-medium">下載最新 Release ZIP</p>
+                <p class="text-sm text-gray-500">從 GitHub Releases 下載</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">2</div>
+              <div>
+                <p class="text-gray-900 font-medium">解壓縮並前往 chrome://extensions</p>
+                <p class="text-sm text-gray-500">開啟「開發人員模式」</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">3</div>
+              <div>
+                <p class="text-gray-900 font-medium">載入未封裝項目</p>
+                <p class="text-sm text-gray-500">選擇 dist/ 資料夾</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://github.com/linktrove/linktrove/releases" target="_blank" class="block bg-white text-accent border-2 border-accent px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors duration-200 cursor-pointer text-center">
+            GitHub Releases
+          </a>
+        </div>
+      </div>
+
+      <!-- System Requirements -->
+      <div class="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg">
+        <p class="text-sm text-gray-600 text-center">
+          <strong>系統需求：</strong> Chrome 88+ 或其他 Chromium 系瀏覽器（Edge, Brave, etc.）
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <!-- Logo & Tagline -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 font-heading font-bold text-2xl mb-3">
+            <span class="text-primary">LinkTrove</span>
+          </div>
+          <p class="text-gray-400 mb-4">
+            重新定義瀏覽器書籤管理體驗
+          </p>
+        </div>
+
+        <!-- Links: Product -->
+        <div>
+          <h4 class="font-heading font-semibold mb-3">產品</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#features" class="hover:text-primary transition-colors duration-200">功能特色</a></li>
+            <li><a href="#demo" class="hover:text-primary transition-colors duration-200">互動展示</a></li>
+            <li><a href="#installation" class="hover:text-primary transition-colors duration-200">安裝指南</a></li>
+          </ul>
+        </div>
+
+        <!-- Links: Resources -->
+        <div>
+          <h4 class="font-heading font-semibold mb-3">資源</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="https://github.com/linktrove/linktrove" target="_blank" class="hover:text-primary transition-colors duration-200">GitHub</a></li>
+            <li><a href="https://github.com/linktrove/linktrove/tree/main/docs" target="_blank" class="hover:text-primary transition-colors duration-200">文檔</a></li>
+            <li><a href="https://github.com/linktrove/linktrove/issues" target="_blank" class="hover:text-primary transition-colors duration-200">回報問題</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-400 text-sm">
+          © 2026 LinkTrove. Open Source under <a href="https://github.com/linktrove/linktrove/blob/main/LICENSE" target="_blank" class="text-primary hover:text-primary-light transition-colors duration-200">MIT License</a>.
+        </p>
+        <div class="flex gap-6">
+          <a href="https://github.com/linktrove/linktrove" target="_blank" class="text-gray-400 hover:text-primary transition-colors duration-200">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>
