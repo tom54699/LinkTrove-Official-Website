@@ -14,49 +14,29 @@
 }
 
 @layer components {
-  /* Demo card styles */
-  .demo-card {
-    @apply bg-white p-4 rounded-xl shadow-md border border-gray-200;
-    @apply flex items-center gap-4 cursor-grab;
-    @apply transition-all duration-200;
+  /* Open tabs (draggable) */
+  .open-tab {
+    user-select: none;
   }
 
-  .demo-card:hover {
-    @apply shadow-lg border-primary/30;
-  }
-
-  .demo-card:active {
+  .open-tab:active {
     @apply cursor-grabbing;
   }
 
-  /* SortableJS states */
-  .sortable-ghost {
-    @apply opacity-50 bg-primary/10;
+  /* Saved cards */
+  .saved-card {
+    animation: slideIn 0.3s ease-out;
   }
 
-  .sortable-chosen {
-    @apply shadow-xl;
-  }
-
-  .sortable-drag {
-    @apply rotate-2 scale-105;
-  }
-
-  /* Demo card content */
-  .demo-card img {
-    @apply w-10 h-10 rounded-lg flex-shrink-0;
-  }
-
-  .demo-card-info {
-    @apply flex-1 min-w-0;
-  }
-
-  .demo-card-title {
-    @apply font-medium text-gray-900 truncate;
-  }
-
-  .demo-card-url {
-    @apply text-sm text-gray-500 truncate;
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 }
 

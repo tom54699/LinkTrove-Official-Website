@@ -1,66 +1,140 @@
 // LinkTrove Landing Page - Main JavaScript
 
-// Demo cards data
-const demoCardsData = [
+// Open tabs data (simulating browser tabs)
+const openTabsData = [
   {
     title: 'React - Official Documentation',
     url: 'react.dev',
     favicon: 'https://react.dev/favicon.ico',
   },
   {
-    title: 'MDN Web Docs - Resources for developers',
+    title: 'MDN Web Docs',
     url: 'developer.mozilla.org',
     favicon: 'https://developer.mozilla.org/favicon-48x48.cbbd161b.png',
   },
   {
-    title: 'CSS-Tricks - Tips, Tricks, and Techniques',
+    title: 'CSS-Tricks',
     url: 'css-tricks.com',
     favicon: 'https://css-tricks.com/favicon.svg',
   },
   {
-    title: 'GitHub - Where the world builds software',
+    title: 'GitHub',
     url: 'github.com',
     favicon: 'https://github.githubassets.com/favicons/favicon.svg',
   },
   {
-    title: 'Stack Overflow - Where Developers Learn',
+    title: 'Stack Overflow',
     url: 'stackoverflow.com',
     favicon: 'https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico',
   },
 ];
 
-// Initialize demo cards
-function initDemoCards() {
-  const container = document.getElementById('demo-cards');
-  if (!container) return;
+// Saved cards counter
+let savedCardsCount = 0;
 
-  // Clear container
-  container.innerHTML = '';
+// Initialize demo
+function initDemo() {
+  const openTabsContainer = document.getElementById('open-tabs');
+  const savedCardsContainer = document.getElementById('saved-cards');
+  const emptyState = document.getElementById('empty-state');
 
-  // Create cards
-  demoCardsData.forEach((card, index) => {
-    const cardEl = document.createElement('div');
-    cardEl.className = 'demo-card';
-    cardEl.innerHTML = `
-      <img src="${card.favicon}" alt="${card.title}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23ff507a%22%3E%3Cpath d=%22M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z%22/%3E%3C/svg%3E'">
-      <div class="demo-card-info">
-        <div class="demo-card-title">${card.title}</div>
-        <div class="demo-card-url">${card.url}</div>
+  if (!openTabsContainer || !savedCardsContainer) return;
+
+  // Create open tabs (draggable)
+  openTabsData.forEach((tab, index) => {
+    const tabEl = document.createElement('div');
+    tabEl.className = 'open-tab bg-white p-3 rounded-lg border border-gray-200 cursor-grab hover:border-primary/50 hover:shadow-md transition-all duration-200';
+    tabEl.draggable = true;
+    tabEl.dataset.tabIndex = index;
+    tabEl.innerHTML = `
+      <div class="flex items-center gap-3">
+        <img src="${tab.favicon}" alt="${tab.title}" class="w-6 h-6 rounded flex-shrink-0" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23ff507a%22%3E%3Cpath d=%22M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z%22/%3E%3C/svg%3E'">
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium text-gray-900 truncate">${tab.title}</div>
+          <div class="text-xs text-gray-500 truncate">${tab.url}</div>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
       </div>
     `;
-    container.appendChild(cardEl);
+
+    // Drag start
+    tabEl.addEventListener('dragstart', (e) => {
+      e.dataTransfer.effectAllowed = 'copy';
+      e.dataTransfer.setData('text/plain', index.toString());
+      tabEl.style.opacity = '0.5';
+    });
+
+    // Drag end
+    tabEl.addEventListener('dragend', (e) => {
+      tabEl.style.opacity = '1';
+    });
+
+    openTabsContainer.appendChild(tabEl);
   });
 
-  // Initialize SortableJS
-  new Sortable(container, {
-    animation: 200,
-    easing: 'ease-out',
-    ghostClass: 'sortable-ghost',
-    chosenClass: 'sortable-chosen',
-    dragClass: 'sortable-drag',
-    handle: '.demo-card',
-    // Enable touch support for mobile
-    touchStartThreshold: 10,
+  // Set up drop zone
+  savedCardsContainer.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+    savedCardsContainer.classList.add('ring-2', 'ring-primary', 'ring-opacity-50');
+  });
+
+  savedCardsContainer.addEventListener('dragleave', (e) => {
+    if (e.target === savedCardsContainer) {
+      savedCardsContainer.classList.remove('ring-2', 'ring-primary', 'ring-opacity-50');
+    }
+  });
+
+  savedCardsContainer.addEventListener('drop', (e) => {
+    e.preventDefault();
+    savedCardsContainer.classList.remove('ring-2', 'ring-primary', 'ring-opacity-50');
+
+    const tabIndex = parseInt(e.dataTransfer.getData('text/plain'));
+    const tabData = openTabsData[tabIndex];
+
+    if (!tabData) return;
+
+    // Hide empty state
+    if (emptyState) {
+      emptyState.style.display = 'none';
+    }
+
+    // Create saved card
+    const cardEl = document.createElement('div');
+    cardEl.className = 'saved-card bg-white p-4 rounded-xl border border-gray-200 shadow-sm opacity-0 transform scale-95 transition-all duration-300';
+    cardEl.innerHTML = `
+      <div class="flex items-start gap-3">
+        <img src="${tabData.favicon}" alt="${tabData.title}" class="w-10 h-10 rounded-lg flex-shrink-0" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23ff507a%22%3E%3Cpath d=%22M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z%22/%3E%3C/svg%3E'">
+        <div class="flex-1 min-w-0">
+          <div class="font-medium text-gray-900 mb-1">${tabData.title}</div>
+          <div class="text-sm text-gray-500 truncate">${tabData.url}</div>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">✓ 已儲存</span>
+        </div>
+      </div>
+    `;
+
+    savedCardsContainer.appendChild(cardEl);
+
+    // Animate in
+    setTimeout(() => {
+      cardEl.classList.remove('opacity-0', 'scale-95');
+      cardEl.classList.add('opacity-100', 'scale-100');
+    }, 10);
+
+    // Success feedback
+    savedCardsCount++;
+
+    // Flash border green
+    setTimeout(() => {
+      cardEl.classList.add('ring-2', 'ring-green-500');
+      setTimeout(() => {
+        cardEl.classList.remove('ring-2', 'ring-green-500');
+      }, 500);
+    }, 300);
   });
 }
 
@@ -134,7 +208,7 @@ function initNavbarScroll() {
 
 // Initialize all features when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  initDemoCards();
+  initDemo();
   initMobileMenu();
   initSmoothScroll();
   initNavbarScroll();
