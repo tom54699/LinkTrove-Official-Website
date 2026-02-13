@@ -33,8 +33,8 @@ const translations = {
     'feature.batch.title': '批次操作',
     'feature.batch.desc': '多選卡片、批次刪除/移動/開啟，提升管理效率',
 
-    'feature.share.title': 'GitHub Gist 分享',
-    'feature.share.desc': '一鍵產生分享連結，透過 GitHub Gist 公開或私密分享',
+    'feature.share.title': 'Google Drive 同步',
+    'feature.share.desc': '支援 Google Drive 雲端同步，跨裝置自動備份與還原',
 
     'feature.import.title': '匯入/匯出',
     'feature.import.desc': '支援 Toby v3/v4 JSON、HTML 書籤匯入，完整備份還原',
@@ -168,8 +168,8 @@ const translations = {
     'feature.batch.title': 'Batch Operations',
     'feature.batch.desc': 'Multi-select cards, batch delete/move/open for efficient management',
 
-    'feature.share.title': 'GitHub Gist Sharing',
-    'feature.share.desc': 'One-click generate sharing links via GitHub Gist, public or private',
+    'feature.share.title': 'Google Drive Sync',
+    'feature.share.desc': 'Supports Google Drive cloud sync, automatic backup and restore across devices',
 
     'feature.import.title': 'Import/Export',
     'feature.import.desc': 'Support Toby v3/v4 JSON, HTML bookmarks import, full backup & restore',
