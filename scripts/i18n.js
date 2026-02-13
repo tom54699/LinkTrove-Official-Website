@@ -46,6 +46,7 @@ const translations = {
     'demo.open_tabs': '開啟的分頁',
     'demo.drag_hint': '將分頁拖曳到這裡儲存',
     'demo.caption': '層級化介面設計',
+    'demo.hint': '💡 提示：從右側拖曳分頁到左側儲存區（支援滑鼠與觸控）',
 
     // Benefits Section
     'benefits.title': '為什麼選擇 LinkTrove',
@@ -75,6 +76,8 @@ const translations = {
 
     'install.step3.title': '步驟 3：開始整理書籤',
     'install.step3.desc': '建立你的第一個集合，開始儲存分頁',
+
+    'install.requirements': '<strong>系統需求：</strong> Chrome 88+ 或其他 Chromium 系瀏覽器（Edge, Brave, etc.）',
 
     // Footer
     'footer.tagline': '重新定義瀏覽器書籤管理體驗',
@@ -137,6 +140,7 @@ const translations = {
     'demo.open_tabs': 'Open Tabs',
     'demo.drag_hint': 'Drag tabs here to save',
     'demo.caption': 'Hierarchical Interface Design',
+    'demo.hint': '💡 Hint: Drag tabs from right to left save area (supports mouse & touch)',
 
     // Benefits Section
     'benefits.title': 'Why Choose LinkTrove',
@@ -166,6 +170,8 @@ const translations = {
 
     'install.step3.title': 'Step 3: Start Organizing Bookmarks',
     'install.step3.desc': 'Create your first collection and start saving tabs',
+
+    'install.requirements': '<strong>Requirements:</strong> Chrome 88+ or other Chromium-based browsers (Edge, Brave, etc.)',
 
     // Footer
     'footer.tagline': 'Redefining browser bookmark management',
@@ -245,7 +251,12 @@ class I18n {
             el.value = translation;
           }
         } else {
-          el.textContent = translation;
+          // Use innerHTML for translations that contain HTML tags
+          if (key === 'install.requirements') {
+            el.innerHTML = translation;
+          } else {
+            el.textContent = translation;
+          }
         }
       }
     });
