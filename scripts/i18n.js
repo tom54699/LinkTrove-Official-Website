@@ -92,6 +92,47 @@ const translations = {
     'footer.about.privacy': '隱私權政策',
 
     'footer.copyright': '© 2026 LinkTrove. All rights reserved.',
+
+    // Privacy Policy Page
+    'privacy.back_to_home': '← 返回首頁',
+    'privacy.title': '隱私權政策',
+    'privacy.effective_date': '生效日期：2026 年 2 月 13 日',
+    'privacy.intro': '歡迎使用 LinkTrove（以下稱「本服務」）。我們重視您的隱私，並致力於保護您的個人資料。本隱私權政策說明本服務蒐集、使用、儲存與揭露資料之方式。',
+
+    'privacy.section1.title': '一、適用範圍',
+    'privacy.section1.content': '本隱私權政策適用於您使用 LinkTrove Chrome 擴充功能及其相關功能時所涉及之資料處理行為。',
+
+    'privacy.section2.title': '二、我們蒐集與處理的資料類型',
+
+    'privacy.section3.title': '三、資料使用目的',
+    'privacy.section3.intro': '我們處理上述資料僅用於以下目的：',
+
+    'privacy.section4.title': '四、資料儲存與第三方服務',
+
+    'privacy.section5.title': '五、我們不會做的事',
+
+    'privacy.section6.title': '六、資料保存期間',
+    'privacy.section6.content': '我們會在達成前述目的所需期間內保存資料。您可隨時刪除本地資料、停用同步、移除擴充功能，或撤銷第三方授權。',
+
+    'privacy.section7.title': '七、您的權利',
+    'privacy.section7.intro': '依適用法令，您得行使查詢、閱覽、更正、刪除、停止處理等權利。您亦可透過下列方式自行管理資料：',
+
+    'privacy.section8.title': '八、資料安全',
+    'privacy.section8.content': '我們採取合理之技術與管理措施保護資料安全，以避免未經授權存取、竄改、揭露或毀損。',
+
+    'privacy.section9.title': '九、未成年人隱私',
+    'privacy.section9.content': '本服務並非專為未成年人設計。若您為法定代理人並認為未成年人提供了不當資料，請與我們聯絡。',
+
+    'privacy.section10.title': '十、隱私權政策之修訂',
+    'privacy.section10.content': '我們可能因功能更新或法令要求調整本政策。修訂後版本將公布於本頁面，並載明生效日期。',
+
+    'privacy.section11.title': '十一、聯絡方式',
+    'privacy.section11.intro': '若您對本隱私權政策有任何問題，請透過以下方式聯絡：',
+
+    'privacy.last_updated': '最後更新：2026 年 2 月 13 日',
+
+    'privacy.footer.tagline': '重新定義瀏覽器書籤管理體驗',
+    'privacy.footer.back_home': '返回首頁',
   },
 
   'en': {
@@ -186,6 +227,47 @@ const translations = {
     'footer.about.privacy': 'Privacy Policy',
 
     'footer.copyright': '© 2026 LinkTrove. All rights reserved.',
+
+    // Privacy Policy Page
+    'privacy.back_to_home': '← Back to Home',
+    'privacy.title': 'Privacy Policy',
+    'privacy.effective_date': 'Effective Date: February 13, 2026',
+    'privacy.intro': 'Welcome to LinkTrove (hereinafter "the Service"). We value your privacy and are committed to protecting your personal data. This Privacy Policy explains how the Service collects, uses, stores, and discloses data.',
+
+    'privacy.section1.title': '1. Scope',
+    'privacy.section1.content': 'This Privacy Policy applies to data processing activities when you use the LinkTrove Chrome extension and its related features.',
+
+    'privacy.section2.title': '2. Types of Data We Collect and Process',
+
+    'privacy.section3.title': '3. Purpose of Data Use',
+    'privacy.section3.intro': 'We process the above data solely for the following purposes:',
+
+    'privacy.section4.title': '4. Data Storage and Third-Party Services',
+
+    'privacy.section5.title': '5. What We Will Not Do',
+
+    'privacy.section6.title': '6. Data Retention Period',
+    'privacy.section6.content': 'We will retain data for the period necessary to achieve the aforementioned purposes. You may delete local data, disable sync, remove the extension, or revoke third-party authorization at any time.',
+
+    'privacy.section7.title': '7. Your Rights',
+    'privacy.section7.intro': 'Under applicable laws, you may exercise rights to access, view, correct, delete, and stop processing. You can also manage data yourself through:',
+
+    'privacy.section8.title': '8. Data Security',
+    'privacy.section8.content': 'We take reasonable technical and administrative measures to protect data security and prevent unauthorized access, alteration, disclosure, or destruction.',
+
+    'privacy.section9.title': '9. Children\'s Privacy',
+    'privacy.section9.content': 'The Service is not designed specifically for minors. If you are a legal guardian and believe a minor has provided inappropriate data, please contact us.',
+
+    'privacy.section10.title': '10. Privacy Policy Amendments',
+    'privacy.section10.content': 'We may update this policy due to feature updates or legal requirements. The revised version will be published on this page with the effective date noted.',
+
+    'privacy.section11.title': '11. Contact Information',
+    'privacy.section11.intro': 'If you have any questions about this Privacy Policy, please contact us via:',
+
+    'privacy.last_updated': 'Last Updated: February 13, 2026',
+
+    'privacy.footer.tagline': 'Redefining browser bookmark management',
+    'privacy.footer.back_home': 'Back to Home',
   }
 };
 
