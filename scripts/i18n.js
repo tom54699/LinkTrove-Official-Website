@@ -17,6 +17,28 @@ const translations = {
     'hero.cta': '免費安裝',
     'hero.learn_more': '了解更多',
 
+    // Features Section
+    'features.title': '功能特色',
+    'features.subtitle': '專為重度分頁使用者設計的強大功能',
+
+    'feature.hierarchy.title': '四層級架構',
+    'feature.hierarchy.desc': '組織 → 集合 → 群組 → 卡片 層級管理，讓大量書籤井然有序',
+
+    'feature.dnd.title': '拖放排序',
+    'feature.dnd.desc': '直覺拖放卡片，自由重新排序，順序永久保存',
+
+    'feature.sync.title': '即時分頁同步',
+    'feature.sync.desc': '多視窗分頁即時同步，支援跨視窗拖動',
+
+    'feature.batch.title': '批次操作',
+    'feature.batch.desc': '多選卡片、批次刪除/移動/開啟，提升管理效率',
+
+    'feature.share.title': 'GitHub Gist 分享',
+    'feature.share.desc': '一鍵產生分享連結，透過 GitHub Gist 公開或私密分享',
+
+    'feature.import.title': '匯入/匯出',
+    'feature.import.desc': '支援 Toby v3/v4 JSON、HTML 書籤匯入，完整備份還原',
+
     // Demo Section
     'demo.title': '試試將分頁儲存為卡片',
     'demo.subtitle': '拖曳右側的開啟分頁到左側，體驗儲存書籤的流暢操作',
@@ -25,52 +47,34 @@ const translations = {
     'demo.drag_hint': '將分頁拖曳到這裡儲存',
     'demo.caption': '層級化介面設計',
 
-    // Features Section
-    'features.title': '為什麼選擇 LinkTrove？',
-    'features.subtitle': '專為需要管理大量分頁和書籤的使用者設計',
-
-    'feature.hierarchy.title': '四層級架構',
-    'feature.hierarchy.desc': '組織 → 集合 → 群組 → 卡片 層級管理，讓大量書籤井然有序',
-
-    'feature.dnd.title': '拖放排序',
-    'feature.dnd.desc': '直覺的拖放操作，輕鬆重新排列卡片順序',
-
-    'feature.sync.title': '即時同步',
-    'feature.sync.desc': '自動同步所有開啟的分頁，多視窗支援',
-
-    'feature.batch.title': '批次操作',
-    'feature.batch.desc': '多選卡片進行批次刪除、移動或開啟',
-
-    'feature.share.title': 'GitHub Gist 分享',
-    'feature.share.desc': '一鍵發布分享連結到 GitHub Gist',
-
-    'feature.import.title': '匯入 / 匯出',
-    'feature.import.desc': '支援 Toby JSON 和 HTML 書籤格式',
-
     // Benefits Section
-    'benefits.title': '提升你的工作效率',
-    'benefits.subtitle': '讓分頁管理變得簡單有序',
+    'benefits.title': '為什麼選擇 LinkTrove',
+    'benefits.subtitle': '從使用者視角出發，解決真實痛點',
 
-    'benefit.organize.title': '井然有序',
-    'benefit.organize.desc': '不再被數十個分頁淹沒，所有內容都有條理地分類',
+    'benefit1.number': '01',
+    'benefit1.title': '告別分頁地獄',
+    'benefit1.desc': 'Chrome 分頁過多導致記憶體爆炸、找不到需要的網頁？將分頁儲存為卡片，需要時快速搜尋（Ctrl+K）開啟，讓瀏覽器保持輕盈。',
 
-    'benefit.productivity.title': '提升生產力',
-    'benefit.productivity.desc': '快速找到需要的資料，節省搜尋時間',
+    'benefit2.number': '02',
+    'benefit2.title': '研究資料系統化',
+    'benefit2.desc': '研究資料散落各處，難以整理分類？使用階層式組織（組織 → 集合 → 群組 → 卡片），讓知識管理井然有序。',
 
-    'benefit.sync.title': '跨裝置同步',
-    'benefit.sync.desc': '使用 Google Drive 在不同電腦間同步你的書籤',
+    'benefit3.number': '03',
+    'benefit3.title': '多裝置無痛同步',
+    'benefit3.desc': '換電腦或瀏覽器時書籤遺失？支援 Google Drive 雲端同步，跨裝置自動備份。也可匯出 JSON 備份，隨時還原。',
 
     // Installation Section
     'install.title': '開始使用 LinkTrove',
+    'install.subtitle': '選擇適合你的安裝方式',
     'install.step1.title': '步驟 1：安裝擴充功能',
-    'install.step1.desc': '從 Chrome Web Store 安裝',
+    'install.step1.desc': '從 Chrome Web Store 下載安裝 LinkTrove 擴充功能',
     'install.step1.button': '前往 Chrome Web Store',
 
     'install.step2.title': '步驟 2：開啟新分頁',
-    'install.step2.desc': '安裝後開啟新分頁即可使用',
+    'install.step2.desc': '安裝完成後，開啟新分頁即可看到 LinkTrove 介面',
 
-    'install.step3.title': '步驟 3：開始整理',
-    'install.step3.desc': '建立集合，儲存你的分頁',
+    'install.step3.title': '步驟 3：開始整理書籤',
+    'install.step3.desc': '建立你的第一個集合，開始儲存分頁',
 
     // Footer
     'footer.tagline': '重新定義瀏覽器書籤管理體驗',
@@ -104,6 +108,28 @@ const translations = {
     'hero.cta': 'Free Install',
     'hero.learn_more': 'Learn More',
 
+    // Features Section
+    'features.title': 'Features',
+    'features.subtitle': 'Powerful features designed for heavy tab users',
+
+    'feature.hierarchy.title': '4-Tier Architecture',
+    'feature.hierarchy.desc': 'Organizations → Collections → Groups → Cards hierarchical management for organized bookmarks',
+
+    'feature.dnd.title': 'Drag & Drop',
+    'feature.dnd.desc': 'Intuitive drag-and-drop cards, freely reorder, permanently saved',
+
+    'feature.sync.title': 'Real-time Tab Sync',
+    'feature.sync.desc': 'Multi-window tab real-time sync with cross-window drag support',
+
+    'feature.batch.title': 'Batch Operations',
+    'feature.batch.desc': 'Multi-select cards, batch delete/move/open for efficient management',
+
+    'feature.share.title': 'GitHub Gist Sharing',
+    'feature.share.desc': 'One-click generate sharing links via GitHub Gist, public or private',
+
+    'feature.import.title': 'Import/Export',
+    'feature.import.desc': 'Support Toby v3/v4 JSON, HTML bookmarks import, full backup & restore',
+
     // Demo Section
     'demo.title': 'Try Saving Tabs as Cards',
     'demo.subtitle': 'Drag tabs from the right to the left to experience seamless bookmark saving',
@@ -112,52 +138,34 @@ const translations = {
     'demo.drag_hint': 'Drag tabs here to save',
     'demo.caption': 'Hierarchical Interface Design',
 
-    // Features Section
-    'features.title': 'Why Choose LinkTrove?',
-    'features.subtitle': 'Designed for users who manage tons of tabs and bookmarks',
-
-    'feature.hierarchy.title': '4-Tier Architecture',
-    'feature.hierarchy.desc': 'Organizations → Collections → Groups → Cards hierarchical management for organized bookmarks',
-
-    'feature.dnd.title': 'Drag & Drop',
-    'feature.dnd.desc': 'Intuitive drag-and-drop to reorder cards effortlessly',
-
-    'feature.sync.title': 'Real-time Sync',
-    'feature.sync.desc': 'Auto-sync all open tabs with multi-window support',
-
-    'feature.batch.title': 'Batch Operations',
-    'feature.batch.desc': 'Multi-select cards for batch delete, move, or open',
-
-    'feature.share.title': 'GitHub Gist Sharing',
-    'feature.share.desc': 'One-click publish sharing links to GitHub Gist',
-
-    'feature.import.title': 'Import / Export',
-    'feature.import.desc': 'Support for Toby JSON and HTML bookmark formats',
-
     // Benefits Section
-    'benefits.title': 'Boost Your Productivity',
-    'benefits.subtitle': 'Make tab management simple and organized',
+    'benefits.title': 'Why Choose LinkTrove',
+    'benefits.subtitle': 'Solving real pain points from users\' perspective',
 
-    'benefit.organize.title': 'Stay Organized',
-    'benefit.organize.desc': 'No more drowning in dozens of tabs—everything neatly categorized',
+    'benefit1.number': '01',
+    'benefit1.title': 'Say Goodbye to Tab Hell',
+    'benefit1.desc': 'Too many Chrome tabs causing memory explosion, can\'t find the pages you need? Save tabs as cards, quickly search (Ctrl+K) to open when needed, keep your browser light.',
 
-    'benefit.productivity.title': 'Increase Productivity',
-    'benefit.productivity.desc': 'Quickly find what you need, save search time',
+    'benefit2.number': '02',
+    'benefit2.title': 'Systematize Research Data',
+    'benefit2.desc': 'Research data scattered everywhere, hard to organize? Use hierarchical organization (Organizations → Collections → Groups → Cards) for well-organized knowledge management.',
 
-    'benefit.sync.title': 'Cross-device Sync',
-    'benefit.sync.desc': 'Use Google Drive to sync bookmarks across devices',
+    'benefit3.number': '03',
+    'benefit3.title': 'Painless Multi-device Sync',
+    'benefit3.desc': 'Lost bookmarks when switching computers or browsers? Supports Google Drive cloud sync for automatic cross-device backup. Also export JSON backups anytime.',
 
     // Installation Section
     'install.title': 'Get Started with LinkTrove',
+    'install.subtitle': 'Choose the installation method that suits you',
     'install.step1.title': 'Step 1: Install Extension',
-    'install.step1.desc': 'Install from Chrome Web Store',
+    'install.step1.desc': 'Download and install LinkTrove extension from Chrome Web Store',
     'install.step1.button': 'Go to Chrome Web Store',
 
     'install.step2.title': 'Step 2: Open New Tab',
-    'install.step2.desc': 'Use LinkTrove after installation by opening a new tab',
+    'install.step2.desc': 'After installation, open a new tab to see LinkTrove interface',
 
-    'install.step3.title': 'Step 3: Start Organizing',
-    'install.step3.desc': 'Create collections and save your tabs',
+    'install.step3.title': 'Step 3: Start Organizing Bookmarks',
+    'install.step3.desc': 'Create your first collection and start saving tabs',
 
     // Footer
     'footer.tagline': 'Redefining browser bookmark management',
