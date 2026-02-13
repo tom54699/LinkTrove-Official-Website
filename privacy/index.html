@@ -22,13 +22,6 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="../styles/main.css">
-  <style>
-    .lang-btn.active {
-      background-color: white;
-      color: #ff507a;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-  </style>
 </head>
 <body>
 
@@ -41,31 +34,10 @@
         <span class="text-primary">LinkTrove</span>
       </a>
 
-      <!-- Right Side: Language Switcher + Back to Home -->
-      <div class="flex items-center gap-4">
-        <!-- Language Switcher -->
-        <div class="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
-          <button
-            data-lang-btn="zh-TW"
-            onclick="window.i18n?.switchLanguage('zh-TW')"
-            class="lang-btn px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 text-gray-600 hover:text-gray-900"
-          >
-            繁中
-          </button>
-          <button
-            data-lang-btn="en"
-            onclick="window.i18n?.switchLanguage('en')"
-            class="lang-btn px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 text-gray-600 hover:text-gray-900"
-          >
-            EN
-          </button>
-        </div>
-
-        <!-- Back to Home -->
-        <a href="../" class="text-gray-600 hover:text-primary transition-colors duration-200" data-i18n="privacy.back_to_home">
-          ← 返回首頁
-        </a>
-      </div>
+      <!-- Back to Home -->
+      <a href="../" class="text-gray-600 hover:text-primary transition-colors duration-200" data-i18n="privacy.back_to_home">
+        ← 返回首頁
+      </a>
     </div>
   </nav>
 
