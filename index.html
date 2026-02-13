@@ -33,6 +33,13 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="./styles/main.css">
+  <style>
+    .lang-btn.active {
+      background-color: white;
+      color: #ff507a;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
 
@@ -47,14 +54,32 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-gray-600 hover:text-primary transition-colors duration-200">功能特色</a>
-        <a href="#demo" class="text-gray-600 hover:text-primary transition-colors duration-200">互動展示</a>
-        <a href="#installation" class="text-gray-600 hover:text-primary transition-colors duration-200">安裝指南</a>
+        <a href="#features" class="text-gray-600 hover:text-primary transition-colors duration-200" data-i18n="nav.features">功能特色</a>
+        <a href="#demo" class="text-gray-600 hover:text-primary transition-colors duration-200" data-i18n="nav.demo">互動展示</a>
+        <a href="#installation" class="text-gray-600 hover:text-primary transition-colors duration-200" data-i18n="nav.installation">安裝指南</a>
+      </div>
+
+      <!-- Language Switcher -->
+      <div class="hidden md:flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+        <button
+          data-lang-btn="zh-TW"
+          onclick="window.i18n?.switchLanguage('zh-TW')"
+          class="lang-btn px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 text-gray-600 hover:text-gray-900"
+        >
+          繁中
+        </button>
+        <button
+          data-lang-btn="en"
+          onclick="window.i18n?.switchLanguage('en')"
+          class="lang-btn px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 text-gray-600 hover:text-gray-900"
+        >
+          EN
+        </button>
       </div>
 
       <!-- CTA Button -->
       <div class="hidden md:block">
-        <a href="#installation" class="bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer">
+        <a href="#installation" class="bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer" data-i18n="nav.install_cta">
           立即安裝
         </a>
       </div>
@@ -70,10 +95,29 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-200">
       <div class="flex flex-col gap-3">
-        <a href="#features" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2">功能特色</a>
-        <a href="#demo" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2">互動展示</a>
-        <a href="#installation" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2">安裝指南</a>
-        <a href="#installation" class="bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer text-center mt-2">
+        <a href="#features" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2" data-i18n="nav.features">功能特色</a>
+        <a href="#demo" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2" data-i18n="nav.demo">互動展示</a>
+        <a href="#installation" class="text-gray-600 hover:text-primary transition-colors duration-200 py-2" data-i18n="nav.installation">安裝指南</a>
+
+        <!-- Mobile Language Switcher -->
+        <div class="flex items-center gap-2 bg-gray-100 rounded-lg p-1 mt-2">
+          <button
+            data-lang-btn="zh-TW"
+            onclick="window.i18n?.switchLanguage('zh-TW')"
+            class="lang-btn flex-1 px-3 py-2 rounded text-sm font-medium transition-all duration-200 text-gray-600 hover:text-gray-900"
+          >
+            繁中
+          </button>
+          <button
+            data-lang-btn="en"
+            onclick="window.i18n?.switchLanguage('en')"
+            class="lang-btn flex-1 px-3 py-2 rounded text-sm font-medium transition-all duration-200 text-gray-600 hover:text-gray-900"
+          >
+            EN
+          </button>
+        </div>
+
+        <a href="#installation" class="bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer text-center mt-2" data-i18n="nav.install_cta">
           立即安裝
         </a>
       </div>
@@ -86,21 +130,20 @@
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <!-- Left: Text Content -->
         <div class="space-y-6">
-          <h1 class="text-5xl md:text-6xl font-heading font-bold text-gray-900 leading-tight">
-            一個分頁，<br>
-            <span class="text-primary">管理所有書籤</span>
+          <h1 class="text-5xl md:text-6xl font-heading font-bold text-gray-900 leading-tight" data-i18n="hero.title">
+            一個分頁，管理所有書籤
           </h1>
-          <p class="text-lg md:text-xl text-gray-600">
+          <p class="text-lg md:text-xl text-gray-600" data-i18n="hero.subtitle">
             為重度分頁使用者設計的 Chrome 擴充功能。四層級架構、拖放排序、即時同步、批次操作，讓你的研究資料井然有序。
           </p>
 
           <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#installation" class="bg-primary-dark text-white px-8 py-4 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer text-center">
+            <a href="#installation" class="bg-primary-dark text-white px-8 py-4 rounded-lg font-medium hover:bg-[#cc003d] transition-colors duration-200 shadow-sm cursor-pointer text-center" data-i18n="hero.cta">
               免費安裝
             </a>
-            <a href="#demo" class="bg-white text-primary border-2 border-primary px-8 py-4 rounded-lg font-medium hover:bg-pink-50 transition-colors duration-200 cursor-pointer text-center">
-              互動展示
+            <a href="#demo" class="bg-white text-primary border-2 border-primary px-8 py-4 rounded-lg font-medium hover:bg-pink-50 transition-colors duration-200 cursor-pointer text-center" data-i18n="hero.learn_more">
+              了解更多
             </a>
           </div>
         </div>
@@ -156,7 +199,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
           </svg>
           <h3 class="text-2xl font-semibold font-heading mb-2 text-gray-900">四層級架構</h3>
-          <p class="text-gray-600">Organizations → Collections → Groups → Cards 層級管理，讓大量書籤井然有序</p>
+          <p class="text-gray-600">組織 → 集合 → 群組 → 卡片 層級管理，讓大量書籤井然有序</p>
         </div>
 
         <!-- Feature 2: 拖放排序 -->
@@ -434,6 +477,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="./scripts/i18n.js"></script>
   <script src="./scripts/main.js"></script>
 </body>
 </html>
