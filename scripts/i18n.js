@@ -296,6 +296,11 @@ class I18n {
 
   init() {
     this.applyLanguage(this.currentLang);
+
+    // Update active button state on init
+    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.langBtn === this.currentLang);
+    });
   }
 
   switchLanguage(lang) {
